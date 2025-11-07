@@ -8,13 +8,13 @@ from langchain_core.output_parsers import StrOutputParser
 
 # --- Configuration ---
 CHROMA_DB_PATH = "chroma_db"
-EMBEDDING_MODEL = "all-MiniLM-L6-v2"
+EMBEDDING_MODEL = "lokeshch19/ModernPubMedBERT"
 LLM_MODEL = "llama3.2"
 
 # 1. Initialize Components
 embeddings = HuggingFaceEmbeddings(
     model_name=EMBEDDING_MODEL,
-    model_kwargs={'device': 'cpu'}
+    model_kwargs={'device': 'cuda'}
 )
 
 # Connect to the existing ChromaDB
